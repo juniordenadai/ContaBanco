@@ -12,21 +12,17 @@ namespace ContaBanco
 
         public const int tarifa = 5;
 
-        public Conta(int numero, string nome, double saldo)
-        {
-            Numero = numero;
-            Nome = nome;
-            Saldo = saldo;
-
-        }
-
         public Conta(int numero, string nome)
         { 
             Numero = numero;
             Nome = nome;
         }
+        public Conta(int numero, string nome, double depositoInicial) :this(numero,nome)
+        {
+            Deposito(depositoInicial);
 
-  
+        }
+
         public void Deposito (double deposito)
         {
             Saldo += deposito;
