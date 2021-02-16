@@ -9,9 +9,10 @@ namespace ContaBanco
             int numero;
             string nome;
             char dep;
-            double saldo;
-            double deposito;
-            double saque;
+            double depositoInicial;
+            double quantia;
+            Conta conta;
+
             Console.Write(" Entre com o numero da conta ");
             numero = int.Parse(Console.ReadLine());
             Console.Write(" Entre com o nome do Titular ");
@@ -21,27 +22,29 @@ namespace ContaBanco
             if (dep == 'S' || dep =='s')
             {
                 Console.Write(" Entre com o valor inicial ");
-                saldo = double.Parse(Console.ReadLine());
+                depositoInicial = double.Parse(Console.ReadLine());
+                conta = new Conta(numero, nome, depositoInicial);
+
             }
             else
             {
-                saldo = 0.00;
+                conta = new Conta(numero, nome);
             }
-            Conta conta = new Conta(numero, nome, saldo);
+            
             Console.WriteLine("Dados da Conta: ");
-            Console.WriteLine("Conta " + conta.Numero + " Nome do Titular: " + conta.Nome + " Saldo Atual: " + conta.Saldo);
+            Console.WriteLine(conta);
 
             Console.Write("Valor a Depositar: ");
-            deposito = double.Parse(Console.ReadLine());
-            conta.Deposito(deposito);
+            quantia = double.Parse(Console.ReadLine());
+            conta.Deposito(quantia);
             Console.WriteLine("Dados da Conta: ");
-            Console.WriteLine("Conta " + conta.Numero + " Nome do Titular: " + conta.Nome + " Saldo Atual: " + conta.Saldo);
+            Console.WriteLine(conta);
 
             Console.Write("Valor a Sacar: ");
-            saque = double.Parse(Console.ReadLine());
-            conta.Saque(saque);
+            quantia = double.Parse(Console.ReadLine());
+            conta.Saque(quantia);
             Console.WriteLine("Dados da Conta: ");
-            Console.WriteLine("Conta " + conta.Numero + " Nome do Titular: " + conta.Nome + " Saldo Atual: " + conta.Saldo);
+            Console.WriteLine(conta);
 
         }
     }

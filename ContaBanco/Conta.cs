@@ -6,7 +6,7 @@ namespace ContaBanco
 {
     class Conta
     {
-        private string _nome;
+        public string Nome { get; set; }
         public int Numero { get; private set; }
         public double Saldo { get; private set; }
 
@@ -26,19 +26,7 @@ namespace ContaBanco
             Nome = nome;
         }
 
-        public string Nome
-        {
-            get { return _nome; }
-            set
-            {
-                if (value != null && value.Length > 1)
-                {
-                    _nome = value;
-                }
-            }
-
-        }
-
+  
         public void Deposito (double deposito)
         {
             Saldo = Saldo + deposito;
@@ -49,6 +37,16 @@ namespace ContaBanco
         {
             Saldo = Saldo - (saque + tarifa);
 
+        }
+
+        public override string ToString()
+        {
+            return "Conta " 
+                + Numero 
+                + " Nome do Titular: " 
+                + Nome 
+                + " Saldo Atual: " 
+                + Saldo.ToString("F2");
         }
 
     }
