@@ -29,13 +29,13 @@ namespace ContaBanco
   
         public void Deposito (double deposito)
         {
-            Saldo = Saldo + deposito;
+            Saldo += deposito;
 
         }
        
         public void Saque (double saque)
         {
-            Saldo = Saldo - (saque + tarifa);
+            Saldo -= saque + tarifa;
 
         }
 

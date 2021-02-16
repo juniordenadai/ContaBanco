@@ -37,13 +37,13 @@ namespace ContaBanco
             Console.Write("Valor a Depositar: ");
             quantia = double.Parse(Console.ReadLine());
             conta.Deposito(quantia);
-            Console.WriteLine("Dados da Conta: ");
+            Console.WriteLine("Dados da Conta Atualizado: ");
             Console.WriteLine(conta);
 
             Console.Write("Valor a Sacar: ");
             quantia = double.Parse(Console.ReadLine());
             conta.Saque(quantia);
-            Console.WriteLine("Dados da Conta: ");
+            Console.WriteLine("Dados da Conta Atualizado: ");
             Console.WriteLine(conta);
 
         }
